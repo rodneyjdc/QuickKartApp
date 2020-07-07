@@ -15,7 +15,7 @@ namespace Library.Models
             this.listOfCustomers = new Customer[10];
         }
 
-        bool AddCustomer(Customer customer)
+        public bool AddCustomer(Customer customer)
         {
             if (this.indexNumber < 10 && customer != null)
             {

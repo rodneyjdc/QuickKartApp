@@ -10,7 +10,7 @@ namespace Library.Models
     {
         private static int counter;
         private string emailId;
-        private int phoneNumber;
+        private string phoneNumber;
 
         public string Address { get; set; }
         public int CustomerId { 
@@ -49,7 +49,7 @@ namespace Library.Models
         }
         public char Gender { get; set; }
         public string Password { get; set; }
-        public int PhoneNumber { 
+        public string PhoneNumber { 
             get
             {
                 return this.phoneNumber;
@@ -70,7 +70,7 @@ namespace Library.Models
                 }
                 catch (InvalidPhoneNumberException)
                 {
-                    this.phoneNumber = 0;
+                    this.phoneNumber = "N/A";
                 }
             }
         }
