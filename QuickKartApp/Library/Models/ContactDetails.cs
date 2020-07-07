@@ -39,5 +39,21 @@ namespace Library.Models
         {
             return Contacts[number];
         }
+
+        public string SendLuckyDrawMessage<U>(U contact, string message)
+        {
+            string resultMessage = "Could not find the contact.";
+            T temp;
+            for (int i = 0; i < this.Contacts.Length; i++)
+            {
+                temp = Contacts[i];
+                if (temp.Equals(contact))
+                {
+                    resultMessage = message + " " + temp.ToString();
+                    break;
+                }
+            }
+            return resultMessage;
+        }
     }
 }
