@@ -7,6 +7,8 @@ namespace Tester
     {
         static void Main(string[] args)
         {
+            /* Customer Account Creation
+             
             int attempts = 3;
             while (attempts > 0)
             {
@@ -67,9 +69,36 @@ namespace Tester
                 Console.WriteLine("\nYou have {0} more attempts to provide valid information.\n", attempts);
 
             }
+            */
 
+            ContactDetails mobile = new ContactDetails(3);
+            mobile.AddContact("9845020724");
+            mobile.AddContact("7245690129");
+            mobile.AddContact("8904421829");
 
-     
+            ContactDetails email = new ContactDetails(3);
+            email.AddContact("Jeremy@gmail.com");
+            email.AddContact("Anne@gmail.com");
+            email.AddContact("Griffeth@gmail.com");
+
+            ContactDetails contacts = new ContactDetails(6);
+            contacts.AddContact("9845020724");
+            contacts.AddContact("7245690129");
+            contacts.AddContact("8904421829");
+            contacts.AddContact("Jeremy@gmail.com");
+            contacts.AddContact("Anne@gmail.com");
+            contacts.AddContact("Griffeth@gmail.com");
+
+            Random randomNumber = new Random();
+            int luckyNumber = randomNumber.Next(0, 3);
+
+            string mobileNumber = (string) mobile.GetContactDetails(luckyNumber);
+            string emailId = (string) email.GetContactDetails(luckyNumber);
+            string luckyContact = (string)contacts.GetContactDetails(luckyNumber);
+
+            Console.WriteLine("Selected lucky mobile number: {0}", mobileNumber);
+            Console.WriteLine("Selected lucky email ID: {0}", emailId);
+            Console.WriteLine("Selected lucky contact: {0}", luckyContact);
         }
     }
 }
