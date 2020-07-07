@@ -71,17 +71,17 @@ namespace Tester
             }
             */
 
-            ContactDetails mobile = new ContactDetails(3);
+            ContactDetails<string> mobile = new ContactDetails<string>(3);
             mobile.AddContact("9845020724");
             mobile.AddContact("7245690129");
             mobile.AddContact("8904421829");
 
-            ContactDetails email = new ContactDetails(3);
+            ContactDetails<string> email = new ContactDetails<string>(3);
             email.AddContact("Jeremy@gmail.com");
             email.AddContact("Anne@gmail.com");
             email.AddContact("Griffeth@gmail.com");
 
-            ContactDetails contacts = new ContactDetails(6);
+            ContactDetails<string> contacts = new ContactDetails<string>(6);
             contacts.AddContact("9845020724");
             contacts.AddContact("7245690129");
             contacts.AddContact("8904421829");
@@ -92,9 +92,9 @@ namespace Tester
             Random randomNumber = new Random();
             int luckyNumber = randomNumber.Next(0, 3);
 
-            string mobileNumber = (string) mobile.GetContactDetails(luckyNumber);
-            string emailId = (string) email.GetContactDetails(luckyNumber);
-            string luckyContact = (string)contacts.GetContactDetails(luckyNumber);
+            string mobileNumber = mobile.GetContactDetails(luckyNumber);
+            string emailId = email.GetContactDetails(luckyNumber);
+            string luckyContact = contacts.GetContactDetails(luckyNumber);
 
             Console.WriteLine("Selected lucky mobile number: {0}", mobileNumber);
             Console.WriteLine("Selected lucky email ID: {0}", emailId);
