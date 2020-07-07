@@ -4,11 +4,11 @@ using System.Text;
 
 namespace Library.Models
 {
-    public class ContactDetails
+    public class ContactDetails<T>
     {
         //An object array to store any type of contacts 
         //  (i.e. phone numbers and the email ids)
-        public object[] Contacts { get; set; }
+        public T[] Contacts { get; set; }
 
         //Used to set the size of the array
         public int Size { get; set; }
@@ -20,13 +20,13 @@ namespace Library.Models
         //Parameterized constructor to initialize the instance variables
         public ContactDetails(int size)
         {
-            this.Contacts = new object[size];
+            this.Contacts = new T[size];
             this.Size = size;
             this.Index = 0;
         }
 
         //Add contacts to the object array using the index number
-        public void AddContact(object contact)
+        public void AddContact(T contact)
         {
             if (Index < Size) 
             {
@@ -35,7 +35,7 @@ namespace Library.Models
         }
 
         //Returns the contact present at the index number passed as a parameter
-        public object GetContactDetails(int number)
+        public T GetContactDetails(int number)
         {
             return Contacts[number];
         }
