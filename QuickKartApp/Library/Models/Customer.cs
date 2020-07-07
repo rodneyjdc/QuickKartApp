@@ -6,7 +6,7 @@ using System.Text.RegularExpressions;
 
 namespace Library.Models
 {
-    class Customer
+    public class Customer
     {
         private static int counter;
         private string emailId;

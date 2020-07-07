@@ -4,7 +4,7 @@ using System.Text;
 
 namespace Library.Models
 {
-    class CustomerDetails
+    public class CustomerDetails
     {
         private int indexNumber;
         private Customer[] listOfCustomers;
