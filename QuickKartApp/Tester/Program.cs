@@ -99,6 +99,14 @@ namespace Tester
             Console.WriteLine("Selected lucky mobile number: {0}", mobileNumber);
             Console.WriteLine("Selected lucky email ID: {0}", emailId);
             Console.WriteLine("Selected lucky contact: {0}", luckyContact);
+
+            // send messages to the selected customer phone number and the email id
+            Console.WriteLine("\nMessages are being sent to the contacts selected..........\n");
+            
+            string result = mobile.SendLuckyDrawMessage<string>(mobileNumber,
+                            "Lucky draw message sent as SMS to");
+            
+            Console.WriteLine(result);
         }
     }
 }
